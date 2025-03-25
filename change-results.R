@@ -1,6 +1,6 @@
-# This script generates Figure 5 in the paper
+# This script generates Figure 3 in the paper
 # Nima Dahir
-# October 2, 2024
+# March 18, 2025
 
 # Libraries:
 library(tidyverse) 
@@ -9,11 +9,7 @@ library(conflicted)
 library(marginaleffects)
 library(ggpubr)
 
-# Set text size
-theme_set(theme_bw(base_size = 30))
-
 # Data:
-
 df <- read_csv(here::here("change_replication_data.csv"))
 
 # Model 1: Change in entropy (diversity) 
@@ -97,4 +93,3 @@ race_plot <- annotate_figure(race_plot,
 
 # Combine the entropy plot and racial change plots into a full figure
 full_change_plot <- ggarrange(entropy_fig, race_plot, ncol = 1)
-

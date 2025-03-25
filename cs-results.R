@@ -1,6 +1,6 @@
-# This script generates Figure 4 in the paper
+# This script generates Figure 3 in the paper
 # Nima Dahir
-# October 2, 2024
+# March 18, 2025
 
 # Libraries:
 library(tidyverse) 
@@ -8,11 +8,8 @@ library(pscl)
 library(conflicted)
 library(marginaleffects)
 
-# Set text size
-theme_set(theme_bw(base_size = 30))
 
 # Data:
-
 df <- read_csv(here::here("cs_replication_data.csv"))
 
 # Scale continuous measures:
@@ -61,8 +58,7 @@ m1_crime <- plot_predictions(m1, condition = list("total_crime_rate")) +
   labs(
     x = "Total Crime Rate (Z-Score)",
     y = ""  
-  ) +
-  theme(text = element_text(size = 30))
+  )
 
 # Arrange the three plots into a single row
 m1_plot <- ggarrange(m1_blk, m1_wht, m1_crime, ncol = 3)
@@ -188,5 +184,3 @@ m3_plot <- annotate_figure(
 
 # Step 8: Combine all plots (m1_plot, m2_plot, m3_plot) into a single figure
 full_cs_plot <- ggarrange(m1_plot, m2_plot, m3_plot, ncol = 1)
-
-

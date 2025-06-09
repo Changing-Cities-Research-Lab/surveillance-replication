@@ -1,6 +1,6 @@
-# This script generates Figure 3 in the paper
+# This script generates Figure 2 in the paper
 # Nima Dahir
-# March 18, 2025
+# June 9, 2025
 
 # Libraries:
 library(tidyverse) 
